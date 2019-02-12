@@ -7,7 +7,9 @@ class Stack():
         self.stackList.append(item)
     
     def pop(self):
+        item = self.stackList[-1]
         self.stackList.remove(self.stackList[-1])
+        return item
 
     def peek(self):
         return self.stackList[-1]
