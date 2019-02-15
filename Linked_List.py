@@ -44,6 +44,26 @@ class List():
         else:
             return False
 
+    def size(self):
+        num_nodes = 0
+        node = self.head
+        while node is not None:
+            num_nodes += 1
+            node = node.get_next_node()
+        return num_nodes
+    
+    def append(self,item):
+        pass
+
+    def index(self,item):
+        pass
+
+    def insert(self,pos,item):
+        pass
+
+    def pop(self,pos=None):
+        pass
+
     def print(self):
         node = self.head
         while node is not None:
