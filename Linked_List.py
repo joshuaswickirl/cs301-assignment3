@@ -53,10 +53,33 @@ class List():
         return num_nodes
     
     def append(self,item):
-        pass
+        new_node = Node(item)
+        current_node = self.head
+        if current_node == None:
+            self.head = new_node
+        else:
+            last_node = False
+            while not last_node:
+                next_node = current_node.get_next_node()
+                if next_node == None:
+                    current_node.set_next_node(new_node)
+                    last_node = True
+                else:
+                    current_node = current_node.get_next_node()
 
     def index(self,item):
-        pass
+        item_index = 0
+        item_found = False
+        current_node = self.head
+        while not item_found:
+            if current_node == None:
+                raise IndexError
+            if current_node.get_data() == item:
+                item_found = True
+            else:
+                current_node = current_node.get_next_node()
+                item_index += 1
+        return item_index
 
     def insert(self,pos,item):
         pass
@@ -67,8 +90,8 @@ class List():
     def print(self):
         node = self.head
         while node is not None:
-            print(node.get_data())
-            node = node.get_data()[1]
+            print(f"Current node data: {node.get_data()}, next node: {node.get_next_node()}")
+            node = node.get_next_node()
 
 class Node():
     def __init__(self, input_data):
@@ -76,7 +99,7 @@ class Node():
         self.next_node = None
     
     def get_data(self):
-        return [self.data, self.next_node]
+        return self.data
 
     def set_data(self, new_data):
         self.data = new_data
