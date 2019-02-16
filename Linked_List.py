@@ -126,6 +126,39 @@ class List():
             else:
                 current_node = current_node.get_next_node()
 
+    def pop(self,pos):
+        current_node = self.head
+        current_index = 0
+        last_node = None
+        while True:
+            # No node exists
+            if current_node == None:
+                raise IndexError
+            # Pop index 0, shift head if next_node exists
+            elif pos == 0:
+                item = current_node.get_data()
+                next_node = current_node.get_next_node()
+                if next_node != None:
+                    self.head = next_node
+                else:
+                    self.head = None
+                del current_node
+                return item
+            # Node before requested index
+            elif current_index == (pos - 1):
+                target_node = current_node.get_next_node()
+                if target_node == None:
+                    raise IndexError
+                current_node.set_next_node(target_node.get_next_node())
+                item = target_node.get_data()
+                del target_node
+                return item
+            # Prep next iteration
+            else:
+                current_node = current_node.get_next_node()
+                current_index += 1
+
+
     def print(self):
         node = self.head
         while node is not None:
