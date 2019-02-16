@@ -104,7 +104,7 @@ class List():
                 current_node = current_node.get_next_node()
                 current_index += 1
 
-    def pop(self,pos=None):
+    def pop(self):
         current_node = self.head
         while True:
             # No node exists
