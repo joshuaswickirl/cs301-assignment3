@@ -82,7 +82,22 @@ class List():
         return item_index
 
     def insert(self,pos,item):
-        pass
+        current_node = self.head
+        current_index = 0
+        index_found = False
+        new_node = Node(item)
+        while not index_found:
+            if pos == current_index + 1:
+                next_node = current_node.get_next_node()
+                if next_node == None:
+                    current_node.set_next_node(new_node)
+                else:
+                    new_node.set_next_node(next_node)
+                    current_node.set_next_node(new_node)
+                index_found = True
+            else:
+                current_node = current_node.get_next_node()
+                current_index += 1
 
     def pop(self,pos=None):
         pass
