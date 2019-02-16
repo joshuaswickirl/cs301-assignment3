@@ -87,7 +87,12 @@ class List():
         index_found = False
         new_node = Node(item)
         while not index_found:
-            if pos == current_index + 1:
+            if current_node == None and pos == 0:
+                self.add(item)
+                index_found = True
+            elif current_node == None:
+                raise IndexError
+            elif pos == current_index + 1:
                 next_node = current_node.get_next_node()
                 if next_node == None:
                     current_node.set_next_node(new_node)
