@@ -105,7 +105,26 @@ class List():
                 current_index += 1
 
     def pop(self,pos=None):
-        pass
+        current_node = self.head
+        while True:
+            # No node exists
+            if current_node == None:
+                raise IndexError
+            # This is the last node, only happens when there is one node
+            elif current_node.get_next_node() == None:
+                item = current_node.get_data()
+                del current_node
+                self.head = None
+                return item
+            # The next node is the last node
+            elif current_node.get_next_node().get_next_node() == None:
+                next_node = current_node.get_next_node()
+                item = next_node.get_data()
+                del next_node
+                current_node.set_next_node(None)
+                return item
+            else:
+                current_node = current_node.get_next_node()
 
     def print(self):
         node = self.head
