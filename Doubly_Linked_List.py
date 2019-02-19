@@ -1,21 +1,39 @@
 class List():
 
     def __init__(self):
+        """
+        Constructor method for class List. 
+        """
         self.head = None
     
     def add(self,item):
+        """
+        Adds new item to the beginning of the list. Requires item and returns nothing.
+        """
         pass
         
     def remove(self,item):
+        """
+        Removes item from the list. Requires item and modifies the list, if item isnt in list it raises an error.  
+        """
         pass
 
     def search(self,item):
+        """
+        Searches list for item, requires item and returns boolean value
+        """
         pass
 
     def isEmpty(self):
+        """
+        Checks to see if the list is empty, requires nothing and returns boolean values
+        """
         pass
 
     def size(self):
+        """
+        
+        """
         pass
     
     def append(self,item):
