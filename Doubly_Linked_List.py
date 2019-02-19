@@ -5,7 +5,7 @@ class List():
     
     def add(self,item):
         pass
-        
+
     def remove(self,item):
         pass
 
@@ -34,7 +34,10 @@ class List():
         pass
 
     def print(self):
-        pass
+        node = self.head
+        while node is not None:
+            print(f"Current node data: {node.get_data()}, next node: {node.get_next_node()}")
+            node = node.get_next_node()
 
 
 class Node():
