@@ -1,14 +1,26 @@
 class List():
     
     def __init__(self):
+        """
+        Constructor method for class List
+        """
         self.head = None
     
     def add(self,item):
+        """
+        Adds new item to the start of the list. Requires item and returns nothing. 
+        Runs in constant time
+        """
         new_node = Node(item)
         new_node.set_next_node(self.head)
         self.head = new_node
         
     def remove(self,item):
+        """
+        Removes an item from list. Requires item and modifies the list and if 
+        item is not found, error is raised.
+        Runs in linear time
+        """
         current_node = self.head
         last_node = None
         item_found = False
@@ -27,6 +39,10 @@ class List():
                 current_node = current_node.get_next_node()
 
     def search(self,item):
+        """
+        Searches list for item. Requires item and returns boolean value.
+        Runs in linear time
+        """
         node = self.head
         item_found = False
         while not item_found:
@@ -39,12 +55,18 @@ class List():
         return item_found
 
     def isEmpty(self):
+        """
+        Checks if list is empty, Requires nothing and returns boolean value.
+        """
         if self.head == None:
             return True
         else:
             return False
 
     def size(self):
+        """
+        
+        """
         num_nodes = 0
         node = self.head
         while node is not None:
