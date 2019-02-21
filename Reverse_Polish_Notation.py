@@ -4,6 +4,9 @@
 # https://en.wikipedia.org/wiki/Reverse_Polish_notation
 #
 
+from Stack import *
+import operator
+
 def rpn(input_string):
     """
     Returns evaluated reverse polish notation expression
@@ -14,4 +17,27 @@ def rpn(input_string):
     
     ex. rpn("3 4 +") = "7" 
     """
-    pass
+    _stack = Stack()
+    elements = input_string.split(" ")
+    for element in elements:
+        if element == '+':
+            operator1 = _stack.pop()
+            operator2 = _stack.pop()
+            _stack.push(operator2 + operator1)
+        elif element == '-':
+            operator1 = _stack.pop()
+            operator2 = _stack.pop()
+            _stack.push(operator2 - operator1)
+        elif element == '*':
+            operator1 = _stack.pop()
+            operator2 = _stack.pop()
+            _stack.push(operator2 * operator1)
+        elif element == '/':
+            operator1 = _stack.pop()
+            operator2 = _stack.pop()
+            _stack.push(operator2 // operator1)
+        else:
+            _stack.push(int(element))
+
+    result = _stack.pop()
+    return result
