@@ -4,19 +4,26 @@ class Deque():
         self.deque = []
 
     def addFront(self,item):
-        pass
+        self.deque.insert(0,item)
 
     def addRear(self,item):
-        pass
+        self.deque.append(item)
 
     def removeFront(self):
-        pass
+        item = self.deque[0]
+        self.deque.remove(self.deque[0])
+        return item
 
     def removeRear(self):
-        pass
+        item = self.deque[-1]
+        self.deque.remove(self.deque[-1])
+        return item
 
     def isEmpty(self):
-        pass
+        if len(self.deque) == 0:
+            return True
+        else:
+            return False
 
     def size(self):
-        pass
+        return len(self.deque)
