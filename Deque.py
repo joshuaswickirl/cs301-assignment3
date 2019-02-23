@@ -2,26 +2,26 @@ class Deque():
 
     def __init__(self):
         """
-        Constructor method for class Deque
+        Constructor method for class Deque.
         """
         self.deque = []
        
     def addFront(self,item):
         """
-        Adds a new item to the front of the deque. Requires item and returns nothing 
+        Adds a new item to the front of the deque. Requires item and returns nothing.
         """
         self.deque.insert(0,item)
 
     def addRear(self,item):
         """
-        Adds a new item to the rear of the deque. Requires item and returns nothing
+        Adds a new item to the rear of the deque. Requires item and returns nothing.
         """
         self.deque.append(item)
 
     def removeFront(self):
         """
         Removes the front item from deque. Requires no parameters and returns
-        item. deque is modified.
+        item. Deque is modified.
         """
         item = self.deque[0]
         self.deque.remove(self.deque[0])
@@ -46,6 +46,6 @@ class Deque():
 
     def size(self):
         """
-        Returns the count of items in deque. Requires no parameters and returns int
+        Returns the count of items in deque. Requires no parameters and returns int.
         """
         return len(self.deque)

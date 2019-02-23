@@ -4,7 +4,7 @@ class List():
         """
         Constructor method for class List. 
 
-        Runs in contstant time.
+        Runs in constant time.
         """
         self.head = None
     
