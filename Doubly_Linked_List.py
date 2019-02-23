@@ -11,7 +11,7 @@ class List():
         Adds new item to the beginning of the list. Requires item and returns nothing.
         """
         pass
-        
+
     def remove(self,item):
         """
         Removes item from the list. Requires item and modifies the list, 
@@ -74,7 +74,10 @@ class List():
         """
         Prints the list. 
         """
-        pass
+        node = self.head
+        while node is not None:
+            print(f"Current node data: {node.get_data()}, next node: {node.get_next_node()}")
+            node = node.get_next_node()
 
 class Node():
 
