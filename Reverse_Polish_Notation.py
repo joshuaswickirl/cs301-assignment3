@@ -5,7 +5,6 @@
 #
 
 from Stack import *
-import operator
 
 def rpn(input_string):
     """
