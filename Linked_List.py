@@ -1,14 +1,26 @@
 class List():
     
     def __init__(self):
+        """
+        Constructor method for class List
+        """
         self.head = None
     
     def add(self,item):
+        """
+        Adds new item to the start of the list. Requires item and returns nothing. 
+        Runs in constant time
+        """
         new_node = Node(item)
         new_node.set_next_node(self.head)
         self.head = new_node
         
     def remove(self,item):
+        """
+        Removes an item from list. Requires item and modifies the list and if 
+        item is not found, error is raised.
+        Runs in linear time
+        """
         current_node = self.head
         last_node = None
         item_found = False
@@ -27,6 +39,10 @@ class List():
                 current_node = current_node.get_next_node()
 
     def search(self,item):
+        """
+        Searches list for item. Requires item and returns boolean value.
+        Runs in linear time
+        """
         node = self.head
         item_found = False
         while not item_found:
@@ -39,12 +55,20 @@ class List():
         return item_found
 
     def isEmpty(self):
+        """
+        Checks if list is empty, Requires nothing and returns boolean value.
+        Runs in constant time
+        """
         if self.head == None:
             return True
         else:
             return False
 
     def size(self):
+        """
+        returns the size of the list. Requires no parameters and returns an int. 
+        Runs in linear time
+        """
         num_nodes = 0
         node = self.head
         while node is not None:
@@ -53,6 +77,10 @@ class List():
         return num_nodes
     
     def append(self,item):
+        """
+        This adds a new item to the end of the list. Requires item and returns nothing. 
+        Runs in linear time
+        """
         new_node = Node(item)
         current_node = self.head
         if current_node == None:
@@ -68,6 +96,10 @@ class List():
                     current_node = current_node.get_next_node()
 
     def index(self,item):
+        """
+        Returns the position of item in list. Requires item and returns index. 
+        Runs in linear time
+        """
         item_index = 0
         item_found = False
         current_node = self.head
@@ -82,6 +114,11 @@ class List():
         return item_index
 
     def insert(self,pos,item):
+        """
+        Adds new item to the list at position pos. Requires item and returns nothing.
+        If list is too short, raises an error. 
+        Runs in linear time
+        """
         current_node = self.head
         current_index = 0
         index_found = False
@@ -105,6 +142,11 @@ class List():
                 current_index += 1
 
     def pop(self):
+        """
+        Pops the last item in the list.Requires nothing and returns an item. 
+        If list is entered, an error is raised. 
+        Runs in linear time
+        """
         current_node = self.head
         while True:
             # No node exists
@@ -127,6 +169,10 @@ class List():
                 current_node = current_node.get_next_node()
 
     def pop(self,pos):
+        """
+        Removes an item at the position pos. Requires positiona and returns item. 
+        Runs in linear time
+        """
         current_node = self.head
         current_index = 0
         last_node = None
@@ -160,6 +206,9 @@ class List():
 
 
     def print(self):
+        """
+        Prints list
+        """        
         node = self.head
         while node is not None:
             print(f"Current node data: {node.get_data()}, next node: {node.get_next_node()}")
@@ -167,17 +216,32 @@ class List():
 
 class Node():
     def __init__(self, input_data):
+        """
+        Constructor method for class node
+        """
         self.data = input_data
         self.next_node = None
     
     def get_data(self):
+        """
+        Gets the data from list, Requires nothing and returns item. 
+        """
         return self.data
 
     def set_data(self, new_data):
+        """
+        Sets data, requires new_data and returns nothing
+        """
         self.data = new_data
 
     def get_next_node(self):
+        """
+        Gets refrence to next node, Requires nothing and returns node. 
+        """
        return self.next_node
 
     def set_next_node(self, new_next_node):
+        """
+        Sets refrence to the next node, requires new_next_node and returns nothing
+        """
         self.next_node = new_next_node
