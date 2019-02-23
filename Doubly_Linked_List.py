@@ -1,3 +1,10 @@
+#
+#   Python's internal representation is likely a Doubly Linked List as
+#   the run time of .append() is constant O(1) as demonstrated in Assignment 3.
+#   This runtime is probably attributed to the fact that "tail" of the 
+#   data structure is tracked by the object.
+#
+
 class List():
 
     def __init__(self):
