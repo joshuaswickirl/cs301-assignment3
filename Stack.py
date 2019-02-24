@@ -34,6 +34,7 @@ class Stack():
         """
         Checks to see if the stack is empty. If stack is empty, an error is raised. 
         requires nothing and returns boolean value
+        Runs in constant time
         """
         if len(self.stackList) == 0:
             return True
@@ -43,5 +44,6 @@ class Stack():
     def size(self):
         """
         Returns number of items on the stack. Requires no parameters and returns int
+        Runs in constant time 
         """
         return len(self.stackList)
