@@ -29,7 +29,7 @@ class Deque():
         Removes the front item from deque. Requires no parameters and returns
         item. Deque is modified.
         
-        Runs in constant time.
+        Runs in linear time.
         """
         item = self.deque[0]
         self.deque.remove(self.deque[0])
@@ -40,7 +40,7 @@ class Deque():
         Removes the item from the rear of the deque. 
         Requires no parameters and returns the item. Deque is modified.
         
-        Runs in constant time.
+        Runs in linear time.
         """
         item = self.deque[-1]
         self.deque.remove(self.deque[-1])

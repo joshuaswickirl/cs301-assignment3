@@ -18,7 +18,7 @@ class Queue():
         """
         Removes the item from the front of the queue. Requires nothing and returns item. 
         
-        Runs in constant time.
+        Runs in linear time.
         """
         item = self.queue[0]
         self.queue.remove(self.queue[0])
