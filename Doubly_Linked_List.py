@@ -1,8 +1,8 @@
 #
-#   Python's internal representation of a list is likely a Doubly Linked List as
-#   the run time of .append() is constant O(1) as demonstrated in Assignment 3.
-#   This runtime is probably attributed to the fact that "tail" of the 
-#   data structure is tracked by the object.
+#   Python's internal representation of a list is likely an array as
+#   the run time of adding an item to a the beginning is linear O(n) as
+#   demonstrated in Assignment 2. A doubly linked list would have an O(1)
+#   runtime as the head and tail are tracked.
 #
 
 class List():
